@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Matthew Falcon — Portfolio</title>
+  <meta name="description" content="Personal portfolio: introduction, projects, contact." />
+  <style>
+    /* ---------- Basic Reset ---------- */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      line-height:1.5;
+      color:#111827;
+      background: linear-gradient(180deg,#fbfbfd 0%, #f6f7fb 100%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* ---------- Layout ---------- */
+    .container{max-width:1000px;margin:0 auto;padding:28px;}
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0;}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:48px;height:48px;border-radius:10px;
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,#6366f1,#06b6d4);
+      color:white;font-weight:700;font-size:18px;
+      box-shadow:0 6px 18px rgba(99,102,241,.12);
+    }
+    nav a{margin-left:16px;color:#374151;text-decoration:none;font-weight:600}
+    nav a:hover{color:#111827}
+
+    /* ---------- Hero ---------- */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:20px;
+      align-items:center;
+      margin:18px 0 34px;
+      background:linear-gradient(180deg, rgba(99,102,241,0.05), transparent);
+      padding:24px;border-radius:12px;
+    }
+    .hero h1{margin:0;font-size:28px}
+    .hero p{margin:8px 0 0;color:#4b5563}
+    .hero .cta{margin-top:12px;display:inline-block;background:#111827;color:white;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700}
+
+    /* ---------- Sections ---------- */
+    section{margin-bottom:36px}
+    h2{margin:0 0 12px;font-size:20px;color:#0f172a}
+    .card{background:white;border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(15,23,42,.04)}
+
+    /* About */
+    .about-grid{display:grid;grid-template-columns:1fr;gap:16px}
+    .facts{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+    .chip{background:#eef2ff;color:#3730a3;padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px}
+
+    /* Projects */
+    .projects-grid{display:grid;grid-template-columns:1fr;gap:16px}
+    .project-card{
+      display:flex;gap:14px;align-items:flex-start;padding:14px;border-radius:10px;background:#ffffff;
+      box-shadow:0 6px 18px rgba(2,6,23,.03)
+    }
+    .project-thumb{width:96px;height:72px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#f8fafc;color:#0f172a;font-weight:700}
+    .project-body h3{margin:0 0 6px;font-size:16px}
+    .project-body p{margin:0;color:#475569;font-size:14px}
+    .project-body button{margin-top:6px}
+
+    /* Contact */
+    form{display:grid;gap:10px}
+    input[type="text"], input[type="email"], textarea{
+      width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;background:white;
+      font-size:15px;color:#0f172a;
+    }
+    button{
+      display:inline-block;padding:10px 14px;border-radius:8px;border:0;background:#111827;color:white;font-weight:700;
+      cursor:pointer;
+    }
+
+    /* Footer */
+    footer{border-top:1px solid #eef2ff;padding-top:18px;color:#6b7280;font-size:14px;text-align:center}
+
+    /* Responsive */
+    @media(min-width:720px){
+      .hero{grid-template-columns:1fr 360px}
+      .about-grid{grid-template-columns:1fr 320px}
+      .projects-grid{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">MF</div>
+        <div>
+          <div style="font-weight:800">Matthew Falcon</div>
+          <div style="font-size:13px;color:#6b7280">Student • Creator • Learner</div>
+        </div>
+      </div>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO / Landing -->
+    <main class="hero card" role="main">
+      <div>
+        <h1>Hi, I’m <strong>Matthew Falcon</strong></h1>
+        <p>Welcome to my portfolio — a small place where I share what I’m learning and creating. I like solving problems, building projects, and trying new things that help me grow.</p>
+        <a class="cta" href="#projects">View My Projects</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-end">
+        <div class="card" style="width:100%;text-align:left">
+          <strong>Quick stats</strong>
+          <div style="margin-top:8px;color:#6b7280;font-size:14px">
+            • Favorite subject: Computer Science<br>
+            • Instruments: Drums (Rock, jazz & marching)<br>
+            • Based in: Clark NJ
+          </div>
+        </div>
+        <div class="card" style="width:100%;text-align:left">
+          <strong>Goals</strong>
+          <div style="margin-top:8px;color:#6b7280;font-size:14px">
+            Keep improving my technical and creative skills, and share projects that show what I can do.
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="card about-grid" aria-labelledby="about">
+        <div>
+          <p>I’m someone who enjoys learning new skills and taking on creative and technical challenges. I care about making things that are both useful and interesting — whether that’s a school assignment, a personal project, or a small creative experiment. Outside of school I play drums and explore tech projects that push my skills forward.</p>
+
+          <div class="facts" aria-hidden="true">
+            <span class="chip">Curious Learner</span>
+            <span class="chip">Drummer</span>
+            <span class="chip">Tech Enthusiast</span>
+          </div>
+        </div>
+        <div>
+          <div style="background:#fff;border-radius:10px;padding:12px;box-shadow:0 6px 18px rgba(2,6,23,.03)">
+            <strong>Fun facts</strong>
+            <ul style="margin:10px 0 0;padding-left:18px;color:#475569">
+              <li>I like building small tools to solve problems.</li>
+              <li>I play in a jazz and Rock Band.</li>
+              <li>I’m exploring computer science in school.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+
+        <!-- ⭐ Existing Projects (unchanged) -->
+        <div class="project-card">
+          <div class="project-thumb">🎨</div>
+          <div class="project-body">
+            <h3>Random Color Generator</h3>
+            <p>Click the button to instantly change the background color!</p>
+            <button onclick="randomColor()">Generate Color</button>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-thumb">🔢</div>
+          <div class="project-body">
+            <h3>Click Counter</h3>
+            <p>Counts how many times you click — simple but fun.</p>
+            <button onclick="countClick()">Click Me</button>
+            <p id="clickCount" style="margin-top:4px;font-weight:600;">0</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-thumb">🎱</div>
+          <div class="project-body">
+            <h3>Magic 8-Ball</h3>
+            <p>Ask any question and shake for your answer.</p>
+            <button onclick="shakeBall()">Shake</button>
+            <p id="eightBallAnswer" style="margin-top:4px;font-weight:600;"></p>
+          </div>
+        </div>
+
+        <!-- ⭐ NEW PROJECTS ADDED BELOW -->
+
+        <!-- Mini Calculator -->
+        <div class="project-card">
+          <div class="project-thumb">🧮</div>
+          <div class="project-body">
+            <h3>Mini Calculator</h3>
+            <p>Type numbers and get instant answers.</p>
+            <input id="calcInput" type="text" placeholder="e.g. 12+7/3" style="margin-top:6px;padding:6px;width:100%;border-radius:6px;border:1px solid #ddd;">
+            <button onclick="calcSolve()">Calculate</button>
+            <p id="calcResult" style="margin-top:6px;font-weight:600;"></p>
+          </div>
+        </div>
+
+        <!-- Reaction Speed Game -->
+        <div class="project-card">
+          <div class="project-thumb">⚡</div>
+          <div class="project-body">
+            <h3>Reaction Test Game</h3>
+            <p>Click the box as fast as possible when it turns green!</p>
+            <button onclick="startReactionGame()">Start</button>
+            <div id="reactionBox" style="width:100%;height:60px;margin-top:8px;background:#dc2626;border-radius:8px;cursor:pointer;"></div>
+            <p id="reactionResult" style="margin-top:6px;font-weight:600;"></p>
+          </div>
+        </div>
+
+        <!-- Dice Roller -->
+        <div class="project-card">
+          <div class="project-thumb">🎲</div>
+          <div class="project-body">
+            <h3>Dice Roller</h3>
+            <p>Roll a random number between 1 and 6.</p>
+            <button onclick="rollDice()">Roll Dice</button>
+            <p id="diceOutput" style="margin-top:6px;font-weight:600;"></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <form>
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea rows="4" placeholder="Your Message"></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Matthew Falcon • All Rights Reserved
+    </footer>
+  </div>
+
+  <!-- ⭐ JAVASCRIPT ADDED HERE -->
+  <script>
+    /* Random Color Generator */
+    function randomColor(){
+      document.body.style.background = "#" + Math.floor(Math.random()*16777215).toString(16);
+    }
+
+    /* Click Counter */
+    let clickCountNum = 0;
+    function countClick(){
+      clickCountNum++;
+      document.getElementById("clickCount").textContent = clickCountNum;
+    }
+
+    /* Magic 8-Ball */
+    function shakeBall(){
+      const answers = ["Yes!", "No.", "Ask again later.", "Definitely!", "Not sure...", "Probably not."];
+      const result = answers[Math.floor(Math.random()*answers.length)];
+      document.getElementById("eightBallAnswer").textContent = result;
+    }
+
+    /* Calculator */
+    function calcSolve(){
+      const input = document.getElementById("calcInput").value;
+      try {
+        const result = eval(input);
+        document.getElementById("calcResult").textContent = "Result: " + result;
+      } catch {
+        document.getElementById("calcResult").textContent = "Invalid expression.";
+      }
+    }
+
+    /* Reaction Game */
+    let reactionStart;
+
+    function startReactionGame(){
+      const box = document.getElementById("reactionBox");
+      document.getElementById("reactionResult").textContent = "";
+      box.style.background = "#dc2626"; // red
+      box.onclick = null;
+
+      const delay = Math.random() * 3000 + 1000;
+
+      setTimeout(() => {
+        box.style.background = "#16a34a"; // green
+        reactionStart = Date.now();
+        box.onclick = () => {
+          const time = Date.now() - reactionStart;
+          document.getElementById("reactionResult").textContent = "Your time: " + time + " ms";
+        };
+      }, delay);
+    }
+
+    /* Dice Roller */
+    function rollDice(){
+      const num = Math.floor(Math.random() * 6) + 1;
+      document.getElementById("diceOutput").textContent = "You rolled: " + num;
+    }
+  </script>
+
+</body>
+</html>
